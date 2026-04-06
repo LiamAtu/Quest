@@ -1,0 +1,7 @@
+{
+  "name": "Quest",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
