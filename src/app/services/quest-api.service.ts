@@ -13,17 +13,11 @@ export interface Quest {
 @Injectable({ providedIn: 'root' })
 export class QuestApiService {
 
-  private apiUrl = 'https://raw.githubusercontent.com/LiamAtu/Quest/master/quests.json';
+  private apiUrl = 'https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/quests.json';
 
   constructor(private http: HttpClient) {}
 
   getQuests(): Observable<Quest[]> {
-    return this.http.get<Quest[]>(this.apiUrl).pipe(
-      catchError(() => of([]))
-    );
-  }
-
-  getQuestsByCategory(category: Quest['category']): Observable<Quest[]> {
     return this.http.get<Quest[]>(this.apiUrl).pipe(
       catchError(() => of([]))
     );

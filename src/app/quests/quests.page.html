@@ -1,13 +1,53 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>quests</ion-title>
+    <ion-title>Quests</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">quests</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+
+  <p class="page-sub">Add habits to your daily routine</p>
+
+  <div class="category-row">
+    <ion-chip
+      *ngFor="let cat of categories"
+      [class.active]="activeCategory === cat"
+      (click)="activeCategory = cat">
+      <ion-label>{{ cat }}</ion-label>
+    </ion-chip>
+  </div>
+
+  <div *ngIf="isLoading" class="loading-state">
+    <p>Loading quests...</p>
+  </div>
+
+  <div *ngIf="!isLoading && filteredQuests.length === 0" class="empty-state">
+    <p>No quests found in this category.</p>
+  </div>
+
+  <div class="quest-list">
+    <div
+      *ngFor="let quest of filteredQuests"
+      class="quest-card"
+      [class.added]="isAdded(quest)">
+
+      <div class="quest-info">
+        <p class="quest-title">{{ quest.title }}</p>
+        <p class="quest-desc">{{ quest.description }}</p>
+        <div class="quest-meta">
+          <span class="cat-pill cat-{{ quest.category }}">{{ quest.category }}</span>
+          <span class="xp-pill">+{{ quest.xp }} XP</span>
+        </div>
+      </div>
+
+      <button
+        class="add-btn"
+        [class.added]="isAdded(quest)"
+        (click)="addQuest(quest)">
+        <ion-icon [name]="isAdded(quest) ? 'checkmark-outline' : 'add-outline'"></ion-icon>
+      </button>
+
+    </div>
+  </div>
+
 </ion-content>
