@@ -1,0 +1,124 @@
+.stats-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+  
+  .stat-card {
+    background: var(--ion-color-light);
+    border-radius: 10px;
+    padding: 12px;
+  }
+  
+  .stat-val {
+    font-size: 22px;
+    font-weight: 500;
+    margin: 0;
+  }
+  
+  .stat-lbl {
+    font-size: 11px;
+    color: var(--ion-color-medium);
+    margin: 0;
+  }
+  
+  .filter-row {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  
+    ion-chip {
+      font-size: 12px;
+      cursor: pointer;
+      --background: var(--ion-color-light);
+  
+      &.active {
+        --background: #7F77DD;
+        --color: white;
+      }
+    }
+  }
+  
+  .trophy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(148px, 1fr));
+    gap: 12px;
+  }
+  
+  .trophy-card {
+    background: white;
+    border: 0.5px solid var(--ion-color-light-shade);
+    border-radius: 14px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    text-align: center;
+  
+    &.locked { opacity: 0.38; }
+    &.unlocked { border-color: var(--ion-color-medium); }
+  }
+  
+  .trophy-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--ion-color-light);
+  }
+  
+  .trophy-name {
+    font-size: 13px;
+    font-weight: 500;
+    margin: 0;
+  }
+  
+  .trophy-desc {
+    font-size: 11px;
+    color: var(--ion-color-medium);
+    margin: 0;
+    line-height: 1.4;
+  }
+  
+  .trophy-tag {
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-weight: 500;
+  }
+  
+  .tag-tier   { background: #EEEDFE; color: #3C3489; }
+  .tag-streak { background: #FAEEDA; color: #633806; }
+  .tag-start  { background: #E1F5EE; color: #085041; }
+  .tag-locked { background: var(--ion-color-light); color: var(--ion-color-medium); }
+  
+  .lock-icon {
+    width: 18px;
+    height: 22px;
+    position: relative;
+  }
+  
+  .lock-body {
+    width: 18px;
+    height: 12px;
+    background: var(--ion-color-medium);
+    border-radius: 3px;
+    position: absolute;
+    bottom: 0;
+  }
+  
+  .lock-arch {
+    width: 12px;
+    height: 10px;
+    border: 2.5px solid var(--ion-color-medium);
+    border-bottom: none;
+    border-radius: 6px 6px 0 0;
+    position: absolute;
+    top: 0;
+    left: 3px;
+  }
