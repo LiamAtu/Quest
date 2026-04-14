@@ -1,0 +1,39 @@
+<ion-content class="ion-padding">
+    <div class="modal-inner">
+  
+      <div class="level-badge" [style.background]="tierColour.badge">
+        <span class="badge-num" [style.color]="tierColour.fg">{{ level }}</span>
+        <span class="badge-lbl" [style.color]="tierColour.fg">level up</span>
+      </div>
+  
+      <h2 class="modal-title">You reached {{ levelTitle }}!</h2>
+      <p class="modal-sub">Keep building your habits to unlock more rewards.</p>
+  
+      <div class="rewards-list">
+        <div *ngFor="let reward of rewards" class="reward-row">
+          <div class="reward-icon" [style.background]="tierColour.light">
+            <ion-icon [name]="iconForType(reward.type)"></ion-icon>
+          </div>
+          <div class="reward-text">
+            <p class="reward-name">{{ reward.label }}</p>
+            <p class="reward-type">{{ reward.type }}</p>
+          </div>
+        </div>
+      </div>
+  
+      <div class="xp-section">
+        <div class="xp-label-row">
+          <span>Level {{ level }}</span>
+          <span>{{ xpDisplay }}</span>
+        </div>
+        <div class="xp-bg">
+          <div class="xp-fill" [style.width]="xpPercent + '%'"></div>
+        </div>
+      </div>
+  
+      <ion-button expand="block" fill="outline" (click)="dismiss()">
+        Continue my quest
+      </ion-button>
+  
+    </div>
+  </ion-content>

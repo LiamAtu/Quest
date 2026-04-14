@@ -5,6 +5,8 @@ import {
 } from '@ionic/angular/standalone';
 import { PlayerService } from '../services/player.service';
 import { HabitService, Habit } from '../services/habit.service';
+import { LevelUpModalComponent } from '../components/level-up-modal.component';
+import { ModalController } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-dashboard',
@@ -24,6 +26,8 @@ export class DashboardPage implements OnInit {
   constructor(
     public playerService: PlayerService,
     private habitService: HabitService,
+    private modalCtrl: ModalController,
+
   ) {}
 
   async ngOnInit() {
@@ -63,7 +67,26 @@ export class DashboardPage implements OnInit {
     habit.completedToday = true;
     this.xpToday += habit.xp;
     await this.habitService.markComplete(habit.id);
-    await this.playerService.addXp(habit.xp);
+    const newRewards = await this.playerService.addXp(habit.xp);
     await this.playerService.updateStreak();
+    if (newRewards.length > 0) {
+      await this.showLevelUpModal(newRewards);
+    }
+  }
+  
+  private async showLevelUpModal(rewards: any[]) {
+    const modal = await this.modalCtrl.create({
+      component: LevelUpModalComponent,
+      componentProps: {
+        level:       this.playerService.profile.level,
+        levelTitle:  this.playerService.profile.title,
+        rewards,
+        currentXp:   this.playerService.profile.xp,
+        nextLevelXp: this.nextLevelXp,
+      },
+      breakpoints:       [0, 0.75],
+      initialBreakpoint: 0.75,
+    });
+    await modal.present();
   }
 }

@@ -11,6 +11,6 @@ bootstrapApplication(AppComponent, {
     provideRouter(routes),
     provideIonicAngular(),
     provideHttpClient(),
-    Storage, // 👈 from tutorial
+    Storage,
   ],
 });
