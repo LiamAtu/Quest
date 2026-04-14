@@ -5,8 +5,100 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-  <p>Good {{ timeOfDay }}</p>
-  <p>Level: {{ playerService.profile.level }}</p>
-  <p>XP: {{ playerService.profile.xp }}</p>
-  <p>Habits loaded: {{ habits.length }}</p>
+
+  <p class="greeting">Good {{ timeOfDay }},</p>
+  <p class="username">{{ playerService.profile.username }}</p>
+
+  <div class="hero-card">
+    <app-hero
+      [appearance]="playerService.profile.appearance"
+      [size]="90">
+    </app-hero>
+    <div class="hero-info">
+      <p class="hero-tier">your hero</p>
+      <p class="hero-name">{{ playerService.profile.title }}</p>
+      <div class="xp-row">
+        <span>{{ playerService.profile.xp }} XP</span>
+        <span>next: {{ nextLevelXp }}</span>
+      </div>
+      <div class="xp-bg">
+        <div class="xp-fill" [style.width]="xpPercent + '%'"></div>
+      </div>
+      <div class="pill-row">
+        <span class="pill pill-streak">
+          {{ playerService.profile.currentStreak }} day streak
+        </span>
+        <span class="pill pill-level">
+          Level {{ playerService.profile.level }}
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="stats-row">
+    <div class="stat-card">
+      <p class="stat-val">{{ doneToday }}</p>
+      <p class="stat-lbl">Done today</p>
+    </div>
+    <div class="stat-card">
+      <p class="stat-val">{{ habits.length }}</p>
+      <p class="stat-lbl">Total habits</p>
+    </div>
+    <div class="stat-card">
+      <p class="stat-val">{{ xpToday }}</p>
+      <p class="stat-lbl">XP today</p>
+    </div>
+  </div>
+
+  <div class="section-head">
+    <p class="section-title">Today's habits</p>
+    <ion-button fill="outline" size="small" routerLink="/tabs/quests">
+      <ion-icon slot="start" name="add-outline"></ion-icon>
+      Add
+    </ion-button>
+  </div>
+
+  <div class="habit-list">
+    <div
+      *ngFor="let habit of habits"
+      class="habit-card"
+      [class.done]="habit.completedToday">
+      <button
+        class="check-btn"
+        [class.checked]="habit.completedToday"
+        (click)="toggleHabit(habit)">
+        <svg *ngIf="habit.completedToday"
+             viewBox="0 0 12 12" width="12" height="12" fill="none">
+          <path d="M2 6l3 3 5-5"
+                stroke="white" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <div class="habit-info">
+        <p class="habit-name">{{ habit.title }}</p>
+        <p class="habit-xp">+{{ habit.xp }} XP</p>
+      </div>
+      <span class="habit-cat cat-{{ habit.category }}">
+        {{ habit.category }}
+      </span>
+    </div>
+
+    <div *ngIf="habits.length === 0" class="empty-state">
+      <p>No habits yet — head to Quests to add some!</p>
+    </div>
+  </div>
+
+  <div class="week-section">
+    <p class="section-title">This week</p>
+    <div class="week-dots">
+      <div
+        *ngFor="let day of weekDays"
+        class="week-dot"
+        [class.completed]="day.completed"
+        [class.today]="day.isToday">
+        <span class="day-label">{{ day.label }}</span>
+      </div>
+    </div>
+  </div>
+
 </ion-content>

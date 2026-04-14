@@ -1,0 +1,224 @@
+.greeting {
+    font-size: 13px;
+    color: var(--ion-color-medium);
+    margin: 0 0 2px;
+  }
+  
+  .username {
+    font-size: 22px;
+    font-weight: 500;
+    margin: 0 0 16px;
+  }
+  
+  .hero-card {
+    background: var(--ion-color-light);
+    border-radius: 16px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  
+  .hero-info {
+    flex: 1;
+    min-width: 0;
+  }
+  
+  .hero-tier {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--ion-color-medium);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin: 0 0 2px;
+  }
+  
+  .hero-name {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0 0 8px;
+  }
+  
+  .xp-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: var(--ion-color-medium);
+    margin-bottom: 4px;
+  }
+  
+  .xp-bg {
+    background: white;
+    border-radius: 999px;
+    height: 7px;
+    overflow: hidden;
+    margin-bottom: 8px;
+  }
+  
+  .xp-fill {
+    height: 100%;
+    border-radius: 999px;
+    background: #7F77DD;
+    transition: width 0.5s;
+  }
+  
+  .pill-row {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  
+  .pill {
+    font-size: 11px;
+    padding: 3px 9px;
+    border-radius: 999px;
+    font-weight: 500;
+  }
+  
+  .pill-streak { background: #FAEEDA; color: #633806; }
+  .pill-level  { background: #EEEDFE; color: #3C3489; }
+  
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .stat-card {
+    background: var(--ion-color-light);
+    border-radius: 10px;
+    padding: 12px;
+  }
+  
+  .stat-val {
+    font-size: 22px;
+    font-weight: 500;
+    margin: 0;
+  }
+  
+  .stat-lbl {
+    font-size: 11px;
+    color: var(--ion-color-medium);
+    margin: 0;
+  }
+  
+  .section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .section-title {
+    font-size: 15px;
+    font-weight: 500;
+    margin: 0;
+  }
+  
+  .habit-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+  
+  .habit-card {
+    background: white;
+    border: 0.5px solid var(--ion-color-light-shade);
+    border-radius: 14px;
+    padding: 12px 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: opacity 0.2s;
+  
+    &.done { opacity: 0.45; }
+  }
+  
+  .check-btn {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 1.5px solid var(--ion-color-medium);
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: all 0.15s;
+  
+    &.checked {
+      background: #7F77DD;
+      border-color: #7F77DD;
+    }
+  }
+  
+  .habit-info { flex: 1; min-width: 0; }
+  
+  .habit-name {
+    font-size: 14px;
+    margin: 0 0 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .habit-xp {
+    font-size: 11px;
+    color: var(--ion-color-medium);
+    margin: 0;
+  }
+  
+  .habit-cat {
+    font-size: 10px;
+    padding: 3px 8px;
+    border-radius: 999px;
+    font-weight: 500;
+    flex-shrink: 0;
+  }
+  
+  .cat-health { background: #E1F5EE; color: #085041; }
+  .cat-mind   { background: #EEEDFE; color: #3C3489; }
+  .cat-body   { background: #FAECE7; color: #712B13; }
+  .cat-social { background: #FBEAF0; color: #72243E; }
+  
+  .empty-state {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: var(--ion-color-medium);
+    font-size: 14px;
+  }
+  
+  .week-section { margin-top: 8px; }
+  
+  .week-dots {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .week-dot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  
+    &::before {
+      content: '';
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--ion-color-light-shade);
+    }
+  
+    &.completed::before { background: #7F77DD; }
+    &.today::before     { background: #7F77DD; outline: 2px solid #AFA9EC; }
+  }
+  
+  .day-label {
+    font-size: 10px;
+    color: var(--ion-color-medium);
+  }

@@ -5,9 +5,12 @@ import {
 } from '@ionic/angular/standalone';
 import { PlayerService } from '../services/player.service';
 import { HabitService, Habit } from '../services/habit.service';
-import { LevelUpModalComponent } from '../components/level-up-modal.component';
-import { ModalController } from '@ionic/angular/standalone';
-
+import { HeroComponent } from '../components/hero.component';
+import { LevelUpModalComponent } from '../components/level-up-modal.component';import { ModalController } from '@ionic/angular/standalone';
+import {IonButton, IonIcon} from '@ionic/angular/standalone';
+import { addIcons } from 'ionicons';
+import { addOutline } from 'ionicons/icons';
+import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.page.html',
@@ -15,7 +18,10 @@ import { ModalController } from '@ionic/angular/standalone';
   standalone: true,
   imports: [
     CommonModule,
+    RouterLink,
     IonHeader, IonToolbar, IonTitle, IonContent,
+    IonButton, IonIcon,
+    HeroComponent,
   ],
 })
 export class DashboardPage implements OnInit {
