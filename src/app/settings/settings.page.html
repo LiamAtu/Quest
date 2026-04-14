@@ -1,13 +1,42 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>settings</ion-title>
+    <ion-title>Settings</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">settings</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+
+  <ion-item>
+    <ion-label position="stacked">Username</ion-label>
+    <ion-input [(ngModel)]="username" placeholder="Enter your name"></ion-input>
+  </ion-item>
+  <ion-button expand="block" (click)="saveUsername()">
+    Save username
+  </ion-button>
+
+  <ion-item>
+    <ion-label>Daily reminder</ion-label>
+    <ion-toggle [(ngModel)]="notificationsEnabled"
+                (ionChange)="toggleNotifications()">
+    </ion-toggle>
+  </ion-item>
+
+  <ion-item *ngIf="notificationsEnabled">
+    <ion-label position="stacked">Reminder hour (0–23)</ion-label>
+    <ion-input type="number" [(ngModel)]="reminderHour"
+               min="0" max="23" (ionChange)="saveReminderTime()">
+    </ion-input>
+  </ion-item>
+
+  <ion-item *ngIf="notificationsEnabled">
+    <ion-label position="stacked">Reminder minute (0–59)</ion-label>
+    <ion-input type="number" [(ngModel)]="reminderMinute"
+               min="0" max="59" (ionChange)="saveReminderTime()">
+    </ion-input>
+  </ion-item>
+
+  <ion-button expand="block" color="danger" (click)="resetProgress()">
+    Reset all progress
+  </ion-button>
+
 </ion-content>
