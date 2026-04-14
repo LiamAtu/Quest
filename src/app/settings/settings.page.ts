@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import {
-  IonContent, IonHeader, IonTitle, IonToolbar,
-  IonItem, IonLabel, IonInput, IonButton, IonToggle
+  IonHeader, IonToolbar, IonTitle, IonContent,
+  IonItem, IonLabel, IonInput, IonButton,
+  IonToggle, IonList, IonListHeader, AlertController
 } from '@ionic/angular/standalone';
-import { NotificationService } from '../services/notification.service';
 import { PlayerService } from '../services/player.service';
+import { NotificationService } from '../services/notification.service';
 import { Storage } from '@ionic/storage-angular';
 
 @Component({
@@ -15,9 +16,10 @@ import { Storage } from '@ionic/storage-angular';
   styleUrls: ['./settings.page.scss'],
   standalone: true,
   imports: [
-    CommonModule, FormsModule, IonContent, IonHeader,
-    IonTitle, IonToolbar, IonItem, IonLabel, IonInput,
-    IonButton, IonToggle
+    CommonModule, FormsModule,
+    IonHeader, IonToolbar, IonTitle, IonContent,
+    IonItem, IonLabel, IonInput, IonButton,
+    IonToggle, IonList, IonListHeader,
   ],
 })
 export class SettingsPage implements OnInit {
@@ -28,9 +30,10 @@ export class SettingsPage implements OnInit {
   reminderMinute = 0;
 
   constructor(
-    private notificationService: NotificationService,
     public playerService: PlayerService,
+    private notificationService: NotificationService,
     private storage: Storage,
+    private alertCtrl: AlertController,
   ) {}
 
   async ngOnInit() {
@@ -43,6 +46,10 @@ export class SettingsPage implements OnInit {
     }
   }
 
+  async ionViewWillEnter() {
+    this.username = this.playerService.profile.username;
+  }
+
   async saveUsername() {
     this.playerService.profile.username = this.username;
     await this.storage.set('player_profile', this.playerService.profile);
@@ -52,7 +59,7 @@ export class SettingsPage implements OnInit {
     if (this.notificationsEnabled) {
       await this.notificationService.scheduleDailyReminder(
         this.reminderHour,
-        this.reminderMinute
+        this.reminderMinute,
       );
       await this.storage.set('reminder_time', {
         hour:   this.reminderHour,
@@ -67,7 +74,7 @@ export class SettingsPage implements OnInit {
     if (this.notificationsEnabled) {
       await this.notificationService.scheduleDailyReminder(
         this.reminderHour,
-        this.reminderMinute
+        this.reminderMinute,
       );
       await this.storage.set('reminder_time', {
         hour:   this.reminderHour,
@@ -76,7 +83,23 @@ export class SettingsPage implements OnInit {
     }
   }
 
-  async resetProgress() {
+  async confirmReset() {
+    const alert = await this.alertCtrl.create({
+      header: 'Reset all progress?',
+      message: 'This will delete all your habits, XP, levels and trophies. This cannot be undone.',
+      buttons: [
+        { text: 'Cancel', role: 'cancel' },
+        {
+          text: 'Reset',
+          role: 'destructive',
+          handler: () => this.resetProgress(),
+        },
+      ],
+    });
+    await alert.present();
+  }
+
+  private async resetProgress() {
     await this.storage.clear();
     window.location.reload();
   }

@@ -1,0 +1,48 @@
+.settings-list {
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 20px;
+  
+    ion-list-header ion-label {
+      font-size: 11px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--ion-color-medium);
+    }
+  }
+  
+  .profile-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    padding: 12px;
+  }
+  
+  .pstat {
+    background: var(--ion-color-light);
+    border-radius: 10px;
+    padding: 10px 6px;
+    text-align: center;
+  }
+  
+  .pstat-val {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0;
+  }
+  
+  .pstat-lbl {
+    font-size: 10px;
+    color: var(--ion-color-medium);
+    margin: 0;
+  }
+  
+  .about-val {
+    font-size: 13px;
+    color: var(--ion-color-medium);
+  }
+  
+  ion-button[color="danger"] {
+    margin-top: 8px;
+  }

@@ -6,36 +6,102 @@
 
 <ion-content class="ion-padding">
 
-  <ion-item>
-    <ion-label position="stacked">Username</ion-label>
-    <ion-input [(ngModel)]="username" placeholder="Enter your name"></ion-input>
-  </ion-item>
-  <ion-button expand="block" (click)="saveUsername()">
-    Save username
-  </ion-button>
+  <ion-list class="settings-list">
 
-  <ion-item>
-    <ion-label>Daily reminder</ion-label>
-    <ion-toggle [(ngModel)]="notificationsEnabled"
-                (ionChange)="toggleNotifications()">
-    </ion-toggle>
-  </ion-item>
+    <ion-list-header>
+      <ion-label>Profile</ion-label>
+    </ion-list-header>
 
-  <ion-item *ngIf="notificationsEnabled">
-    <ion-label position="stacked">Reminder hour (0–23)</ion-label>
-    <ion-input type="number" [(ngModel)]="reminderHour"
-               min="0" max="23" (ionChange)="saveReminderTime()">
-    </ion-input>
-  </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Username</ion-label>
+      <ion-input
+        [(ngModel)]="username"
+        placeholder="Enter your name"
+        (ionBlur)="saveUsername()">
+      </ion-input>
+    </ion-item>
 
-  <ion-item *ngIf="notificationsEnabled">
-    <ion-label position="stacked">Reminder minute (0–59)</ion-label>
-    <ion-input type="number" [(ngModel)]="reminderMinute"
-               min="0" max="59" (ionChange)="saveReminderTime()">
-    </ion-input>
-  </ion-item>
+    <div class="profile-stats">
+      <div class="pstat">
+        <p class="pstat-val">{{ playerService.profile.level }}</p>
+        <p class="pstat-lbl">Level</p>
+      </div>
+      <div class="pstat">
+        <p class="pstat-val">{{ playerService.profile.xp }}</p>
+        <p class="pstat-lbl">Total XP</p>
+      </div>
+      <div class="pstat">
+        <p class="pstat-val">{{ playerService.profile.currentStreak }}</p>
+        <p class="pstat-lbl">Day streak</p>
+      </div>
+      <div class="pstat">
+        <p class="pstat-val">{{ playerService.profile.trophies.length }}</p>
+        <p class="pstat-lbl">Trophies</p>
+      </div>
+    </div>
 
-  <ion-button expand="block" color="danger" (click)="resetProgress()">
+  </ion-list>
+
+  <ion-list class="settings-list">
+
+    <ion-list-header>
+      <ion-label>Notifications</ion-label>
+    </ion-list-header>
+
+    <ion-item>
+      <ion-label>Daily reminder</ion-label>
+      <ion-toggle
+        [(ngModel)]="notificationsEnabled"
+        (ionChange)="toggleNotifications()">
+      </ion-toggle>
+    </ion-item>
+
+    <ng-container *ngIf="notificationsEnabled">
+      <ion-item>
+        <ion-label position="stacked">Reminder hour (0–23)</ion-label>
+        <ion-input
+          type="number"
+          [(ngModel)]="reminderHour"
+          min="0" max="23"
+          (ionChange)="saveReminderTime()">
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Reminder minute (0–59)</ion-label>
+        <ion-input
+          type="number"
+          [(ngModel)]="reminderMinute"
+          min="0" max="59"
+          (ionChange)="saveReminderTime()">
+        </ion-input>
+      </ion-item>
+    </ng-container>
+
+  </ion-list>
+
+  <ion-list class="settings-list">
+
+    <ion-list-header>
+      <ion-label>About</ion-label>
+    </ion-list-header>
+
+    <ion-item>
+      <ion-label>Version</ion-label>
+      <span slot="end" class="about-val">1.0.0</span>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Built with</ion-label>
+      <span slot="end" class="about-val">Ionic + Angular</span>
+    </ion-item>
+
+  </ion-list>
+
+  <ion-button
+    expand="block"
+    color="danger"
+    fill="outline"
+    (click)="confirmReset()">
     Reset all progress
   </ion-button>
 
