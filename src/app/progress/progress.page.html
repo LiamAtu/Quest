@@ -1,13 +1,84 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>progress</ion-title>
+    <ion-title>Progress</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">progress</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+
+  <div class="hero-summary">
+    <div class="tier-badge" [style.background]="tierColour">
+      <span class="tier-level">{{ playerService.profile.level }}</span>
+      <span class="tier-name">{{ tierName }}</span>
+    </div>
+    <div class="hero-stats">
+      <p class="hero-title-name">{{ playerService.profile.title }}</p>
+      <p class="hero-sub">{{ playerService.profile.username }}</p>
+      <div class="streak-row">
+        <span class="pill pill-streak">
+          {{ playerService.profile.currentStreak }} day streak
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="stats-grid">
+    <div class="stat-card">
+      <p class="stat-val">{{ playerService.profile.xp }}</p>
+      <p class="stat-lbl">Total XP</p>
+    </div>
+    <div class="stat-card">
+      <p class="stat-val">{{ playerService.profile.level }}</p>
+      <p class="stat-lbl">Level</p>
+    </div>
+    <div class="stat-card">
+      <p class="stat-val">{{ playerService.profile.currentStreak }}</p>
+      <p class="stat-lbl">Day streak</p>
+    </div>
+    <div class="stat-card">
+      <p class="stat-val">{{ totalHabits }}</p>
+      <p class="stat-lbl">Habits</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="section-title">XP progress</p>
+    <div class="xp-card">
+      <div class="xp-label-row">
+        <span>{{ playerService.profile.title }}</span>
+        <span>{{ xpIntoLevel }} / {{ xpNeededForLevel }} XP</span>
+      </div>
+      <div class="xp-bg">
+        <div class="xp-fill" [style.width]="xpPercent + '%'"></div>
+      </div>
+      <p class="xp-sub">
+        {{ playerService.profile.xp }} total XP —
+        <span *ngIf="playerService.profile.level < 15">
+          {{ nextLevelXp - playerService.profile.xp }} XP until next level
+        </span>
+        <span *ngIf="playerService.profile.level === 15">
+          Max level reached!
+        </span>
+      </p>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="section-title">Level journey</p>
+    <div class="milestones">
+      <div
+        *ngFor="let milestone of levelMilestones"
+        class="milestone"
+        [class.reached]="milestone.reached"
+        [class.current]="milestone.current">
+        <div class="milestone-dot"></div>
+        <div class="milestone-info">
+          <span class="milestone-level">Lv {{ milestone.l }}</span>
+          <span class="milestone-name">{{ milestone.name }}</span>
+        </div>
+        <span class="milestone-xp">{{ milestone.xp }} XP</span>
+      </div>
+    </div>
+  </div>
+
 </ion-content>
