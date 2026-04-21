@@ -13,7 +13,7 @@ export interface Quest {
 @Injectable({ providedIn: 'root' })
 export class QuestApiService {
 
-  private apiUrl = 'https://raw.githubusercontent.com/LiamAtu/Quest/refs/heads/master/quests.json';
+  private apiUrl = 'https://raw.githubusercontent.com/LiamAtu/Quest/master/quests.json';
 
   constructor(private http: HttpClient) {}
 
