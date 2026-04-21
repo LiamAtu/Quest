@@ -1,171 +1,34 @@
 [
-  {
-    "id": 1,
-    "title": "Drink 8 glasses of water",
-    "category": "health",
-    "description": "Stay hydrated throughout the day",
-    "xp": 20
-  },
-  {
-    "id": 2,
-    "title": "Read for 20 minutes",
-    "category": "mind",
-    "description": "Read anything that interests you",
-    "xp": 20
-  },
-  {
-    "id": 3,
-    "title": "Do 20 push-ups",
-    "category": "body",
-    "description": "Build upper body strength",
-    "xp": 20
-  },
-  {
-    "id": 4,
-    "title": "Meditate for 5 minutes",
-    "category": "mind",
-    "description": "Clear your mind and focus",
-    "xp": 20
-  },
-  {
-    "id": 5,
-    "title": "Call a friend or family member",
-    "category": "social",
-    "description": "Stay connected with the people you care about",
-    "xp": 20
-  },
-  {
-    "id": 6,
-    "title": "Go for a 10 minute walk",
-    "category": "body",
-    "description": "Get some fresh air and move your body",
-    "xp": 20
-  },
-  {
-    "id": 7,
-    "title": "Eat a piece of fruit",
-    "category": "health",
-    "description": "One small step towards better nutrition",
-    "xp": 20
-  },
-  {
-    "id": 8,
-    "title": "Write in a journal",
-    "category": "mind",
-    "description": "Reflect on your day and your goals",
-    "xp": 20
-  },
-  {
-    "id": 9,
-    "title": "Do 10 minutes of stretching",
-    "category": "body",
-    "description": "Improve your flexibility and reduce tension",
-    "xp": 20
-  },
-  {
-    "id": 10,
-    "title": "Cook a meal from scratch",
-    "category": "health",
-    "description": "Know exactly what goes into your food",
-    "xp": 20
-  },
-  {
-    "id": 11,
-    "title": "Learn something new for 15 minutes",
-    "category": "mind",
-    "description": "Watch a tutorial, read an article, try something new",
-    "xp": 20
-  },
-  {
-    "id": 12,
-    "title": "Do a random act of kindness",
-    "category": "social",
-    "description": "Help someone without expecting anything in return",
-    "xp": 20
-  }
-
-  {
-    "id": 13,
-    "title": "Drink 8 glasses of water",
-    "category": "health",
-    "description": "Stay hydrated throughout the day",
-    "xp": 20
-  },
-  {
-    "id": 14,
-    "title": "Read for 20 minutes",
-    "category": "mind",
-    "description": "Read anything that interests you",
-    "xp": 20
-  },
-  {
-    "id": 15,
-    "title": "Do 20 push-ups",
-    "category": "body",
-    "description": "Build upper body strength",
-    "xp": 20
-  },
-  {
-    "id": 16,
-    "title": "Meditate for 5 minutes",
-    "category": "mind",
-    "description": "Clear your mind and focus",
-    "xp": 20
-  },
-  {
-    "id": 17,
-    "title": "Call a friend or family member",
-    "category": "social",
-    "description": "Stay connected with the people you care about",
-    "xp": 20
-  },
-  {
-    "id": 18,
-    "title": "Go for a 10 minute walk",
-    "category": "body",
-    "description": "Get some fresh air and move your body",
-    "xp": 20
-  },
-  {
-    "id": 19,
-    "title": "Eat a piece of fruit",
-    "category": "health",
-    "description": "One small step towards better nutrition",
-    "xp": 20
-  },
-  {
-    "id": 20,
-    "title": "Write in a journal",
-    "category": "mind",
-    "description": "Reflect on your day and your goals",
-    "xp": 20
-  },
-  {
-    "id": 21,
-    "title": "Do 10 minutes of stretching",
-    "category": "body",
-    "description": "Improve your flexibility and reduce tension",
-    "xp": 20
-  },
-  {
-    "id": 22,
-    "title": "Cook a meal from scratch",
-    "category": "health",
-    "description": "Know exactly what goes into your food",
-    "xp": 20
-  },
-  {
-    "id": 23,
-    "title": "Learn something new for 15 minutes",
-    "category": "mind",
-    "description": "Watch a tutorial, read an article, try something new",
-    "xp": 20
-  },
-  {
-    "id": 24,
-    "title": "Do a random act of kindness",
-    "category": "social",
-    "description": "Help someone without expecting anything in return",
-    "xp": 20
-  }
+  { "id": 1,  "title": "Drink 8 glasses of water",         "category": "health", "description": "Stay hydrated throughout the day",                        "xp": 20 },
+  { "id": 2,  "title": "Eat a piece of fruit",             "category": "health", "description": "One small step towards better nutrition",                 "xp": 20 },
+  { "id": 3,  "title": "Cook a meal from scratch",         "category": "health", "description": "Know exactly what goes into your food",                   "xp": 20 },
+  { "id": 4,  "title": "Sleep 8 hours",                   "category": "health", "description": "Prioritise rest and recovery",                            "xp": 20 },
+  { "id": 5,  "title": "Eat a healthy breakfast",          "category": "health", "description": "Start the day with a nutritious meal",                    "xp": 20 },
+  { "id": 6,  "title": "Take your vitamins",               "category": "health", "description": "Support your body with daily supplements",                "xp": 20 },
+  { "id": 7,  "title": "Avoid sugar for a day",            "category": "health", "description": "Give your body a break from added sugars",                "xp": 20 },
+  { "id": 8,  "title": "Go to bed before midnight",        "category": "health", "description": "Consistent sleep improves everything",                    "xp": 20 },
+  { "id": 9,  "title": "Read for 20 minutes",              "category": "mind",   "description": "Read anything that interests you",                        "xp": 20 },
+  { "id": 10, "title": "Meditate for 5 minutes",           "category": "mind",   "description": "Clear your mind and focus on the present",               "xp": 20 },
+  { "id": 11, "title": "Write in a journal",               "category": "mind",   "description": "Reflect on your day and your goals",                     "xp": 20 },
+  { "id": 12, "title": "Learn something new for 15 mins",  "category": "mind",   "description": "Watch a tutorial, read an article, try something new",   "xp": 20 },
+  { "id": 13, "title": "Plan your week",                   "category": "mind",   "description": "Spend 10 minutes organising your upcoming week",          "xp": 20 },
+  { "id": 14, "title": "Practise gratitude",               "category": "mind",   "description": "Write down 3 things you are grateful for today",         "xp": 20 },
+  { "id": 15, "title": "No phone for an hour",             "category": "mind",   "description": "Disconnect and let your mind rest",                      "xp": 20 },
+  { "id": 16, "title": "Listen to a podcast",              "category": "mind",   "description": "Learn something on the go",                              "xp": 20 },
+  { "id": 17, "title": "Do 20 push-ups",                   "category": "body",   "description": "Build upper body strength",                              "xp": 20 },
+  { "id": 18, "title": "Go for a 10 minute walk",          "category": "body",   "description": "Get some fresh air and move your body",                  "xp": 20 },
+  { "id": 19, "title": "Do 10 minutes of stretching",      "category": "body",   "description": "Improve your flexibility and reduce tension",            "xp": 20 },
+  { "id": 20, "title": "Go for a run",                     "category": "body",   "description": "Any distance counts — just get moving",                  "xp": 20 },
+  { "id": 21, "title": "Do a 20 minute workout",           "category": "body",   "description": "Follow a routine or freestyle — just move",              "xp": 20 },
+  { "id": 22, "title": "Take the stairs",                  "category": "body",   "description": "Small choices add up to big results",                    "xp": 20 },
+  { "id": 23, "title": "Do 50 sit-ups",                    "category": "body",   "description": "Strengthen your core today",                            "xp": 20 },
+  { "id": 24, "title": "Go for a bike ride",               "category": "body",   "description": "Cardio that's actually fun",                            "xp": 20 },
+  { "id": 25, "title": "Call a friend or family member",   "category": "social", "description": "Stay connected with the people you care about",          "xp": 20 },
+  { "id": 26, "title": "Do a random act of kindness",      "category": "social", "description": "Help someone without expecting anything in return",       "xp": 20 },
+  { "id": 27, "title": "Compliment someone genuinely",     "category": "social", "description": "Brighten someone's day with kind words",                 "xp": 20 },
+  { "id": 28, "title": "Write a thank you message",        "category": "social", "description": "Show appreciation to someone who deserves it",           "xp": 20 },
+  { "id": 29, "title": "Have a screen-free meal",          "category": "social", "description": "Be fully present with the people around you",            "xp": 20 },
+  { "id": 30, "title": "Meet up with a friend",            "category": "social", "description": "Make time for the people who matter",                    "xp": 20 },
+  { "id": 31, "title": "Volunteer for something",          "category": "social", "description": "Give your time to a cause you care about",               "xp": 20 },
+  { "id": 32, "title": "Send an encouraging message",      "category": "social", "description": "Check in on someone who might need it",                  "xp": 20 }
 ]
