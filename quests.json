@@ -83,4 +83,89 @@
     "description": "Help someone without expecting anything in return",
     "xp": 20
   }
+
+  {
+    "id": 13,
+    "title": "Drink 8 glasses of water",
+    "category": "health",
+    "description": "Stay hydrated throughout the day",
+    "xp": 20
+  },
+  {
+    "id": 14,
+    "title": "Read for 20 minutes",
+    "category": "mind",
+    "description": "Read anything that interests you",
+    "xp": 20
+  },
+  {
+    "id": 15,
+    "title": "Do 20 push-ups",
+    "category": "body",
+    "description": "Build upper body strength",
+    "xp": 20
+  },
+  {
+    "id": 16,
+    "title": "Meditate for 5 minutes",
+    "category": "mind",
+    "description": "Clear your mind and focus",
+    "xp": 20
+  },
+  {
+    "id": 17,
+    "title": "Call a friend or family member",
+    "category": "social",
+    "description": "Stay connected with the people you care about",
+    "xp": 20
+  },
+  {
+    "id": 18,
+    "title": "Go for a 10 minute walk",
+    "category": "body",
+    "description": "Get some fresh air and move your body",
+    "xp": 20
+  },
+  {
+    "id": 19,
+    "title": "Eat a piece of fruit",
+    "category": "health",
+    "description": "One small step towards better nutrition",
+    "xp": 20
+  },
+  {
+    "id": 20,
+    "title": "Write in a journal",
+    "category": "mind",
+    "description": "Reflect on your day and your goals",
+    "xp": 20
+  },
+  {
+    "id": 21,
+    "title": "Do 10 minutes of stretching",
+    "category": "body",
+    "description": "Improve your flexibility and reduce tension",
+    "xp": 20
+  },
+  {
+    "id": 22,
+    "title": "Cook a meal from scratch",
+    "category": "health",
+    "description": "Know exactly what goes into your food",
+    "xp": 20
+  },
+  {
+    "id": 23,
+    "title": "Learn something new for 15 minutes",
+    "category": "mind",
+    "description": "Watch a tutorial, read an article, try something new",
+    "xp": 20
+  },
+  {
+    "id": 24,
+    "title": "Do a random act of kindness",
+    "category": "social",
+    "description": "Help someone without expecting anything in return",
+    "xp": 20
+  }
 ]

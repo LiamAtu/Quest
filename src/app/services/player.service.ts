@@ -110,8 +110,14 @@ export class PlayerService {
 
   async addXp(amount: number): Promise<Reward[]> {
     const newRewards: Reward[] = [];
+  
+    if (this.profile.xp === 0) {
+      await this.awardTrophy('starter');
+      newRewards.push({ type: 'trophy', id: 'starter', label: 'Starter trophy' });
+    }
+  
     this.profile.xp += amount;
-
+  
     while (
       this.profile.level < 15 &&
       this.profile.xp >= this.xpRequired(this.profile.level + 1)
@@ -126,7 +132,7 @@ export class PlayerService {
       }
       newRewards.push(...rewards);
     }
-
+  
     await this.saveProfile();
     return newRewards;
   }
@@ -176,7 +182,9 @@ export class PlayerService {
       30: 'streak30', 50: 'streak50'
     };
     const trophy = milestones[this.profile.currentStreak];
-    if (trophy) await this.awardTrophy(trophy);
+    if (trophy && !this.profile.trophies.includes(trophy)) {
+      await this.awardTrophy(trophy);
+    }
   }
 
   private async saveProfile() {

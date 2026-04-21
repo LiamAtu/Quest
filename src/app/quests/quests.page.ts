@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
-  IonHeader, IonToolbar, IonTitle, IonContent,
-  IonButton, IonIcon, IonChip, IonLabel, ToastController
+  IonHeader, IonToolbar, IonTitle, IonContent, IonIcon, IonChip, IonLabel, ToastController
 } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { addOutline, checkmarkOutline } from 'ionicons/icons';
@@ -16,8 +15,7 @@ import { HabitService } from '../services/habit.service';
   standalone: true,
   imports: [
     CommonModule,
-    IonHeader, IonToolbar, IonTitle, IonContent,
-    IonButton, IonIcon, IonChip, IonLabel,
+    IonHeader, IonToolbar, IonTitle, IonContent, IonIcon, IonChip, IonLabel,
   ],
 })
 export class QuestsPage implements OnInit {
