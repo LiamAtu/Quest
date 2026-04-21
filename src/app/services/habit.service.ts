@@ -32,12 +32,12 @@ export class HabitService {
     return this.habits;
   }
 
-  async addHabit(title: string, category: Habit['category']): Promise<void> {
+  async addHabit(title: string, category: Habit['category'], xp: number = 20): Promise<void> {
     const newHabit: Habit = {
       id: Date.now().toString(),
       title,
       category,
-      xp: 20,
+      xp,
       completedToday: false,
       createdAt: new Date().toISOString(),
     };

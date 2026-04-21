@@ -60,7 +60,7 @@ export class QuestsPage implements OnInit {
 
   async addQuest(quest: Quest) {
     if (this.isAdded(quest)) return;
-    await this.habitService.addHabit(quest.title, quest.category);
+    await this.habitService.addHabit(quest.title, quest.category, quest.xp);
     this.addedIds.push(quest.title);
     const toast = await this.toastCtrl.create({
       message: `"${quest.title}" added to your habits!`,
