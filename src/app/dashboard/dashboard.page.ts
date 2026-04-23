@@ -33,8 +33,9 @@ export class DashboardPage implements OnInit {
     public playerService: PlayerService,
     private habitService: HabitService,
     private modalCtrl: ModalController,
-
-  ) {}
+  ) {
+    addIcons({ addOutline });
+  }
 
   async ngOnInit() {
     this.habits = await this.habitService.getHabits();
