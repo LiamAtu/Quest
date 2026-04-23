@@ -74,7 +74,9 @@ export class DashboardPage implements OnInit {
     this.xpToday += habit.xp;
     await this.habitService.markComplete(habit.id);
     const newRewards = await this.playerService.addXp(habit.xp);
-    await this.playerService.updateStreak();
+    if (this.habitService.completedCount === 1) {
+      await this.playerService.updateStreak();
+    }
     if (newRewards.length > 0) {
       await this.showLevelUpModal(newRewards);
     }

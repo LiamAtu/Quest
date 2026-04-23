@@ -140,14 +140,17 @@ export class PlayerService {
   async updateStreak() {
     const today = new Date().toDateString();
     const last  = this.profile.lastCompletedDate;
-    const yesterday = new Date(Date.now() - 86400000).toDateString();
-
+  
     if (last === today) return;
+  
+    const yesterday = new Date(Date.now() - 86400000).toDateString();
+  
     if (last === yesterday) {
       this.profile.currentStreak++;
     } else {
       this.profile.currentStreak = 1;
     }
+  
     this.profile.lastCompletedDate = today;
     await this.checkStreakTrophies();
     await this.saveProfile();

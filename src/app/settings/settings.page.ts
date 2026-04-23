@@ -101,6 +101,7 @@ export class SettingsPage implements OnInit {
 
   private async resetProgress() {
     await this.storage.clear();
+    localStorage.clear();
     window.location.reload();
   }
 }
