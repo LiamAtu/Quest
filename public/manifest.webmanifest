@@ -1,6 +1,6 @@
 {
-  "name": "app",
-  "short_name": "app",
+  "name": "Quest",
+  "short_name": "Quest",
   "display": "standalone",
   "scope": "./",
   "start_url": "./",
