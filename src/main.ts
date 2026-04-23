@@ -5,6 +5,7 @@ import { provideHttpClient } from '@angular/common/http';
 import { AppComponent } from './app/app.component';
 import { routes } from './app/app.routes';
 import { Storage } from '@ionic/storage-angular';
+import { isDevMode } from '@angular/core';
 
 bootstrapApplication(AppComponent, {
   providers: [
