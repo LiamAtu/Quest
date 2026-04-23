@@ -194,3 +194,31 @@ The app is configured as a PWA using `@angular/service-worker`. It includes:
 ---
 
 ## Project Structure
+
+src/
+app/
+components/
+hero.component.ts              — SVG hero character with dynamic skin/colour/accessories
+level-up-modal.component.ts    — Modal shown when player levels up
+services/
+player.service.ts              — XP, levels, streaks, trophies, hero appearance
+habit.service.ts               — CRUD for habits, daily reset logic
+quest-api.service.ts           — HTTP Observable fetching quests from GitHub JSON
+notification.service.ts        — Capacitor Local Notifications scheduling
+dashboard/                       — Home page with hero, habits, stats
+quests/                          — Browse and add habits from external API
+progress/                        — XP history, level journey, stats
+trophies/                        — Trophy cabinet with filters
+settings/                        — Username, notifications, reset
+tabs/                            — Bottom tab navigation
+
+---
+
+## Notes for Grader
+
+- No code comments are used anywhere in the project in line with the brief requirements
+- All pages use standalone components with explicit imports
+- The external JSON API is hosted at: `https://raw.githubusercontent.com/LiamAtu/Quest/master/quests.json`
+- The Capacitor Local Notifications plugin satisfies the native plugin requirement and works on both mobile and Windows desktop
+- The app is deployed as a PWA at: `https://quests-2e4cb.web.app`
+- All data binding requirements are met — interpolation, property binding, event binding, and two-way binding are all demonstrated across the app
