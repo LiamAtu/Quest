@@ -64,11 +64,10 @@ export class PlayerService {
   readonly LEVEL_REWARDS: Record<number, Reward[]> = {
     1:  [{ type: 'trophy',    id: 'starter', label: 'Starter trophy'      }],
     2:  [{ type: 'colour',    id: 'blue',    label: 'Blue hero colour'     }],
-    3:  [{ type: 'trophy',    id: 'streak3', label: '3-day streak badge'   }],
+    3:  [{ type: 'colour',    id: 'red',     label: 'Red hero colour'      }],
     4:  [{ type: 'skin',      id: 'bronze',  label: 'Bronze armour'        },
          { type: 'trophy',    id: 'bronze',  label: 'Bronze tier trophy'   }],
-    6:  [{ type: 'accessory', id: 'shield',  label: 'Shield accessory'     },
-         { type: 'trophy',    id: 'streak7', label: '7-day streak badge'   }],
+    6:  [{ type: 'accessory', id: 'shield',  label: 'Shield accessory'     }],
     7:  [{ type: 'skin',      id: 'silver',  label: 'Silver armour'        },
          { type: 'trophy',    id: 'silver',  label: 'Silver tier trophy'   }],
     9:  [{ type: 'accessory', id: 'cape',    label: 'Cape accessory'       }],
