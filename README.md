@@ -52,6 +52,7 @@ The main home screen displays:
 - Today's habit list with one-tap completion
 - A stats row showing habits done today, total habits, and XP earned today
 - A weekly dot tracker showing which days you completed habits
+<img width="300" alt="Dashboard" src="https://github.com/user-attachments/assets/95969a2c-3809-475a-bf7f-9d25aab1cf67" />
 
 ### Quests
 The Quests page fetches habit suggestions from an external JSON API hosted on 
@@ -60,6 +61,7 @@ GitHub. Users can:
 - Filter quests by category using the chip filters
 - Add any quest to their daily habit list with one tap
 - See which quests have already been added (shown with a checkmark)
+<img width="300" alt="Quests" src="https://github.com/user-attachments/assets/2fefcfb0-a141-497e-a47c-2506a228458d" />
 
 ### Progress
 The Progress page gives a full overview of the player's journey:
@@ -67,6 +69,7 @@ The Progress page gives a full overview of the player's journey:
 - Total XP, level, streak, and habit count stats
 - XP progress bar showing how far into the current level they are
 - A full level journey list showing all 15 levels and which have been reached
+<img width="300" alt="Progress" src="https://github.com/user-attachments/assets/ca2f5543-e896-4ccb-8c27-f29fc9f62b62" />
 
 ### Trophy Cabinet
 The Trophy Cabinet displays all 11 trophies in the game:
@@ -74,6 +77,9 @@ The Trophy Cabinet displays all 11 trophies in the game:
 - Locked trophies are shown with a padlock icon
 - Filter by All, Earned, Locked, Tier, or Streak
 - Stats row showing earned count, locked count, and completion percentage
+<img width="300" alt="Trophies" src="https://github.com/user-attachments/assets/ae31b449-a81d-453d-a398-7fe03661ddf5" />
+<<img width="300" alt="Trophies unlocked" src="https://github.com/user-attachments/assets/d5accaf6-b2be-4a2c-b5a2-29e77d625d6b" />
+
 
 ### Settings
 The Settings page allows users to:
@@ -82,7 +88,7 @@ The Settings page allows users to:
 - Set a custom reminder time (hour and minute)
 - View app version and build info
 - Reset all progress with a confirmation alert
-
+<img width="300" alt="Settings" src="https://github.com/user-attachments/assets/a894d10c-793e-471a-87a8-59dd7ae8b623" />
 ---
 
 ## Gameplay & Progression
@@ -190,50 +196,3 @@ The app is configured as a PWA using `@angular/service-worker`. It includes:
 - A web app manifest with app name, theme colour, and icons
 - A service worker for offline caching of app assets
 - Installable on desktop and mobile via the browser install prompt
-
----
-
-## Project Structure
-
-src/
-
-app/
-
-components/
-
-hero.component.ts              — SVG hero character with dynamic skin/colour/accessories
-
-level-up-modal.component.ts    — Modal shown when player levels up
-
-services/
-
-player.service.ts              — XP, levels, streaks, trophies, hero appearance
-
-habit.service.ts               — CRUD for habits, daily reset logic
-
-quest-api.service.ts           — HTTP Observable fetching quests from GitHub JSON
-
-notification.service.ts        — Capacitor Local Notifications scheduling
-
-dashboard/                       — Home page with hero, habits, stats
-
-quests/                          — Browse and add habits from external API
-
-progress/                        — XP history, level journey, stats
-
-trophies/                        — Trophy cabinet with filters
-
-settings/                        — Username, notifications, reset
-
-tabs/                            — Bottom tab navigation
-
----
-
-## Notes for Grader
-
-- No code comments are used anywhere in the project in line with the brief requirements
-- All pages use standalone components with explicit imports
-- The external JSON API is hosted at: `https://raw.githubusercontent.com/LiamAtu/Quest/master/quests.json`
-- The Capacitor Local Notifications plugin satisfies the native plugin requirement and works on both mobile and Windows desktop
-- The app is deployed as a PWA at: `https://quests-2e4cb.web.app`
-- All data binding requirements are met — interpolation, property binding, event binding, and two-way binding are all demonstrated across the app
