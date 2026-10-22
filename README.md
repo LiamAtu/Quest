@@ -1,10 +1,23 @@
-# Quest — User Guide
+# ⚔️ Quest – Gamified Habit Tracker
+
+![Ionic](https://img.shields.io/badge/Ionic-3880FF?style=for-the-badge&logo=ionic&logoColor=white)
+![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Firebase Hosting](https://img.shields.io/badge/Firebase%20Hosting-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)
+
+**Turn your daily habits into an RPG.** Complete habits to earn XP, level up your hero, unlock armour and accessories, and collect trophies for keeping your streak going.
+
+🔗 **Live demo:** [quests-2e4cb.web.app](https://quests-2e4cb.web.app)
+
+<img width="300" alt="Quest dashboard" src="https://github.com/user-attachments/assets/95969a2c-3809-475a-bf7f-9d25aab1cf67" />
+
+---
 
 ## Overview
 
-Quest is a Progressive Web Application (PWA) built with Ionic 7 and Angular. 
-It gamifies daily habit tracking by rewarding users with XP, levels, cosmetic 
-upgrades, and trophies as they complete habits each day. The app features a hero character that evolves as the player levels up.
+Quest is a Progressive Web App (PWA) built with Ionic 8 and Angular. It gamifies daily habit tracking by rewarding users with XP, levels, cosmetic upgrades and trophies as they complete habits each day. The hero character evolves as the player levels up.
+
+**Highlights:** Angular standalone components · lazy-loaded routes · habit suggestions loaded from a JSON API with `HttpClient` · data saved with Ionic Storage · daily reminders with Capacitor Local Notifications · installable and works offline as a PWA
 
 ---
 
@@ -38,7 +51,7 @@ npx http-server www -p 8080
 ```
 
 ### Live deployment
-The app is deployed and accessible at: `https://quests-2e4cb.web.app`
+The app is deployed and accessible at: [quests-2e4cb.web.app](https://quests-2e4cb.web.app)
 
 ---
 
@@ -78,7 +91,7 @@ The Trophy Cabinet displays all 11 trophies in the game:
 - Filter by All, Earned, Locked, Tier, or Streak
 - Stats row showing earned count, locked count, and completion percentage
 <img width="300" alt="Trophies" src="https://github.com/user-attachments/assets/ae31b449-a81d-453d-a398-7fe03661ddf5" />
-<<img width="300" alt="Trophies unlocked" src="https://github.com/user-attachments/assets/d5accaf6-b2be-4a2c-b5a2-29e77d625d6b" />
+<img width="300" alt="Trophies unlocked" src="https://github.com/user-attachments/assets/d5accaf6-b2be-4a2c-b5a2-29e77d625d6b" />
 
 
 ### Settings
@@ -196,3 +209,9 @@ The app is configured as a PWA using `@angular/service-worker`. It includes:
 - A web app manifest with app name, theme colour, and icons
 - A service worker for offline caching of app assets
 - Installable on desktop and mobile via the browser install prompt
+
+---
+
+### Connect with me
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/liam-kapelianis-a42b3b403)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/LiamAtu)
